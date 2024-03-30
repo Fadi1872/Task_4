@@ -30,14 +30,16 @@ class RegisterController extends Controller
      * @var string
      */
 
-    public function redirectTo()
-    {
-        if (Auth::user()->is_admin) {
-            return redirect()->route('users.index');
-        } else {
-            return redirect()->route('users-show');
-        }
-    }
+     protected $redirectTo = '/users-show';
+
+    // public function redirectTo()
+    // {
+    //     if (Auth::user()->is_admin) {
+    //         return redirect()->route('users.index');
+    //     } else {
+    //         return redirect()->route('users-show');
+    //     }
+    // }
 
     /**
      * Create a new controller instance.
